@@ -15,34 +15,56 @@ import { PromotionalPanel } from 'web/components/promotional-panel'
 const revalidate = 60
 
 export async function getStaticProps() {
-  if (ENV === 'DEV') {
+  try {
+    if (ENV === 'DEV') {
+      // Return a more complete fallback for dev environment
+      return {
+        props: {
+          complexSystemsContract: null,
+          // Add any other required props with safe defaults
+        },
+        revalidate,
+      }
+    }
+
+    const adminDb = await initSupabaseAdmin()
+    const complexSystemsContract = await getContractFromSlug(
+      adminDb,
+      'who-will-be-on-the-complex-systems'
+    )
+
+    const electionsPageProps = await getElectionsPageProps()
+    
+    // Ensure we have valid data before returning
+    if (!complexSystemsContract) {
+      console.warn('Complex systems contract not found')
+      return {
+        notFound: true,
+      }
+    }
+
     return {
-      props: {},
+      props: {
+        ...electionsPageProps,
+        complexSystemsContract: complexSystemsContract,
+      },
       revalidate,
     }
-  }
-  const adminDb = await initSupabaseAdmin()
-  const complexSystemsContract = await getContractFromSlug(
-    adminDb,
-    'who-will-be-on-the-complex-systems'
-  )
-
-  const electionsPageProps = await getElectionsPageProps()
-  return {
-    props: {
-      ...electionsPageProps,
-      complexSystemsContract: complexSystemsContract,
-    },
-    revalidate,
+  } catch (error) {
+    console.error('Error in complexsystems getStaticProps:', error)
+    return {
+      notFound: true,
+    }
   }
 }
 
 export default function ComplexSystems(
-  props: ElectionsPageProps & { complexSystemsContract: Contract }
+  props: ElectionsPageProps & { complexSystemsContract: Contract | null }
 ) {
   useTracking('complex systems page view')
 
-  if (Object.keys(props).length === 0) {
+  // More robust check for valid props
+  if (!props || Object.keys(props).length === 0 || !props.complexSystemsContract) {
     return <Custom404 />
   }
 
@@ -64,10 +86,14 @@ export default function ComplexSystems(
         loginTrackingText="Sign up from /complexsystems"
       />
 
-      <FeedContractCard
-        contract={props.complexSystemsContract}
-        className="mx-1 mb-6 w-[calc(100%-0.5rem)] sm:mx-2 sm:w-[calc(100%-1rem)]"
-      />
+      {/* Only render FeedContractCard if we have a valid contract */}
+      {props.complexSystemsContract && (
+        <FeedContractCard
+          contract={props.complexSystemsContract}
+          className="mx-1 mb-6 w-[calc(100%-0.5rem)] sm:mx-2 sm:w-[calc(100%-1rem)]"
+        />
+      )}
+      
       <USElectionsPage {...props} hideTitle />
     </Page>
   )
