@@ -4,8 +4,8 @@ import { zip } from 'lodash'
 
 // List of secrets that are available to backend (api, functions, scripts, etc.)
 // Edit them at:
-// prod - https://console.cloud.google.com/security/secret-manager?project=mantic-markets
-// dev - https://console.cloud.google.com/security/secret-manager?project=dev-mantic-markets
+// prod - https://console.cloud.google.com/security/secret-manager?project=mm-manifold-dev
+// dev - https://console.cloud.google.com/security/secret-manager?project=dev-mm-manifold-dev
 export const secrets = (
   [
     'API_SECRET',

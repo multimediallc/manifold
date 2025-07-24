@@ -47,40 +47,31 @@ type FirebaseConfig = {
 }
 
 export const PROD_CONFIG: EnvConfig = {
-  domain: 'manifold.markets',
+  domain: 'mmllc.markets',
   amplitudeApiKey: '2d6509fd4185ebb8be29709842752a15',
-  supabaseInstanceId: 'pxidrgkatumlvfqaxcll',
+  supabaseInstanceId: 'aetjitrbyeoyqtvtmixv',
   supabaseAnonKey:
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4aWRyZ2thdHVtbHZmcWF4Y2xsIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Njg5OTUzOTgsImV4cCI6MTk4NDU3MTM5OH0.d_yYtASLzAoIIGdXUBIgRAGLBnNow7JG2SoaNMQ8ySg',
-  googleAnalyticsId: 'GTM-MLMPXHJ6',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFldGppdHJieWVveXF0dnRtaXh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTMzMTMzNTIsImV4cCI6MjA2ODg4OTM1Mn0.iedt4ZaBvkgSyfLiWBnZkiFNUoTZGeHAV-SMZWI-vrs',
+  googleAnalyticsId: 'G-P9C8XSYPEP',
   firebaseConfig: {
-    apiKey: 'AIzaSyDp3J57vLeAZCzxLD-vcPaGIkAmBoGOSYw',
-    authDomain: 'mantic-markets.firebaseapp.com',
-    projectId: 'mantic-markets',
+    apiKey: 'AIzaSyDqH0k9gejYiKm1Hz6BTzXNFyKbeg9Cdgk',
+    authDomain: 'mm-manifold-dev.firebaseapp.com',
+    projectId: 'mm-manifold-dev',
     region: 'us-central1',
-    storageBucket: 'mantic-markets.appspot.com',
-    privateBucket: 'mantic-markets-private',
-    messagingSenderId: '128925704902',
-    appId: '1:128925704902:web:f61f86944d8ffa2a642dc7',
-    measurementId: 'G-SSFK1Q138D',
+    storageBucket: 'mm-manifold-dev.firebasestorage.app',
+    privateBucket: 'mm-manifold-dev-private',
+    messagingSenderId: '504093051915',
+    appId: '1:504093051915:web:e82d906f8af5d6f5b44b0e',
+    measurementId: 'G-P9C8XSYPEP',
   },
   twitchBotEndpoint: 'https://twitch-bot.manifold.markets',
-  apiEndpoint: 'api.manifold.markets',
+  //apiEndpoint: 'api.manifold.markets',
+  apiEndpoint: 'api.mmllc.markets',
   cloudRunId: 'nggbo3neva',
   cloudRunRegion: 'uc',
 
   adminIds: [
-    'igi2zGXsfxYPgB0DJTXVJVmwCOr2', // Austin
-    'tlmGNz9kjXc2EteizMORes4qvWl2', // Stephen
-    'IPTOzEqrpkWmEzh6hwvAyY9PqFb2', // Manifold
-    'AJwLWoo3xue32XIiAVrL5SyR1WB2', // Ian
-    'uglwf3YKOZNGjjEXKc5HampOFRE2', // D4vid
-    '62TNqzdBx7X2q621HltsJm8UFht2', // Marshall
-    'z0cH5XmIM9XgWFOBAILQWt0fTHr1', // Rachel W
-    'cA1JupYR5AR8btHUs2xvkui7jA93', // Genzy
-    'vuI5upWB8yU00rP7yxj95J2zd952', // Manifold Politics
-    '8lZo8X5lewh4hnCoreI7iSc0GxK2', // Manifold AI
-    'mwaVAaKkabODsH8g5VrtbshsXz03', // Ian's alt
+//    'igi2zGXsfxYPgB0DJTXVJVmwCOr2', // Austin
   ],
   visibility: 'PUBLIC',
 

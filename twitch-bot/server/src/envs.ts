@@ -23,8 +23,8 @@ export const DEBUG_TWITCH_ACCOUNT = process.env.DEBUG_TWITCH_ACCOUNT;
 export const IS_DEV = PUBLIC_FACING_URL.indexOf('localhost') > 0;
 
 export const MANIFOLD_URLS = {
-  PROD: 'https://manifold.markets/',
-  DEV: 'https://dev.manifold.markets/',
+  PROD: 'https://mmllc.markets/',
+  DEV: 'https://dev-mm-manifold.vercel.app/',
   PR_DEV: 'https://dev-git-twitch-prerelease-mantic.vercel.app/',
   LOCAL: 'http://localhost:3000/',
 };

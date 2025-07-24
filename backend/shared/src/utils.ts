@@ -114,7 +114,7 @@ export const isProd = () => {
   if (process.env.NEXT_PUBLIC_FIREBASE_ENV) {
     return process.env.NEXT_PUBLIC_FIREBASE_ENV === 'PROD'
   } else {
-    return admin.app().options.projectId === 'mantic-markets'
+    return admin.app().options.projectId === 'mm-manifold-dev'
   }
 }
 

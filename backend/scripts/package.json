@@ -2,7 +2,7 @@
   "name": "scripts",
   "version": "1.0.0",
   "config": {
-    "firestore": "dev-mantic-markets.appspot.com"
+    "firestore": "dev-mm-manifold-dev.appspot.com"
   },
   "scripts": {
     "code": "ts-node manicode.ts"

@@ -19,12 +19,12 @@ ENV=${1:-dev}
 case $ENV in
     dev)
         NEXT_PUBLIC_FIREBASE_ENV=DEV
-        GCLOUD_PROJECT=dev-mantic-markets
+        GCLOUD_PROJECT=dev-mm-manifold-dev
         # MACHINE_TYPE=n2-standard-2 ;;
         MACHINE_TYPE=e2-small ;;
     prod)
         NEXT_PUBLIC_FIREBASE_ENV=PROD
-        GCLOUD_PROJECT=mantic-markets
+        GCLOUD_PROJECT=mm-manifold-dev
         MACHINE_TYPE=c2-standard-4 ;;
     *)
         echo "Invalid environment; must be dev or prod."

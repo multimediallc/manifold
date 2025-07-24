@@ -9,7 +9,7 @@
 #    CONFIG   
 # ============
 ROUTE_TO_SCRIPTS_DIR=.
-PROJECT=mantic-markets
+PROJECT=mm-manifold-dev
 
 DEV_INSTANCE=dev-twitch-bot
 DEV_BUILD_DIR=build/dev

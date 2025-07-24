@@ -10,7 +10,7 @@ You must have set up the `gcloud` cli following the [functions/README](../functi
 
 ## Operating
 
-GCP instances in our projects use the Google "OS login" functionality. To SSH into them, you will need to associate an SSH key with your Google account (perhaps on both `dev-mantic-markets` and `mantic-markets`). If you do
+GCP instances in our projects use the Google "OS login" functionality. To SSH into them, you will need to associate an SSH key with your Google account (perhaps on both `dev-mm-manifold-dev` and `mm-manifold-dev`). If you do
 
 ```
 $ gcloud compute ssh scheduler

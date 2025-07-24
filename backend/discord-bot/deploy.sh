@@ -7,11 +7,11 @@ case $ENV in
     dev)
       ENVIRONMENT=DEV
       GCLOUD_CPU=1
-      GCLOUD_PROJECT=dev-mantic-markets ;;
+      GCLOUD_PROJECT=dev-mm-manifold-dev;;
     prod)
       ENVIRONMENT=PROD
       GCLOUD_CPU=1
-      GCLOUD_PROJECT=mantic-markets ;;
+      GCLOUD_PROJECT=mm-manifold-dev ;;
     *)
       echo "Invalid environment; must be dev or prod."
       exit 1
