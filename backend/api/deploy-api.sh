@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Uncomment this line if you don't want to install Docker locally!
-# MANIFOLD_CLOUD_BUILD=1
+#MANIFOLD_CLOUD_BUILD=1
 
 set -e
 
@@ -14,7 +14,7 @@ SERVICE_NAME="api"
 SERVICE_GROUP="${SERVICE_NAME}-group-east"
 REGION="us-east4" # Ashburn, Virginia
 ZONE="us-east4-a"
-ENV=${1:-dev}
+ENV=prod
 
 case $ENV in
     dev)

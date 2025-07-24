@@ -27,10 +27,10 @@ ENV=${1:-dev}
 
 case $ENV in
     dev)
-        GCLOUD_PROJECT=mm-manifold-dev
+        GCLOUD_PROJECT=dev-mm-manifold-dev
         ;;
     prod)
-        GCLOUD_PROJECT=dev-mm-manifold-dev
+        GCLOUD_PROJECT=mm-manifold-dev
         ;;
     *)
         echo "Invalid environment; must be dev or prod."
@@ -74,7 +74,7 @@ gcloud compute backend-services create ${BACKEND_NAME} \
     --enable-cdn \
     --cache-mode "USE_ORIGIN_HEADERS" \
     --compression-mode "AUTOMATIC" \
-    --no-serve-while-stale \
+#    --no-serve-while-stale \
     --health-checks ${HEALTH_CHECK_NAME} \
     --enable-logging
 #    --ip-address-selection-policy "IPV4_ONLY" \
